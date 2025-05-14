@@ -23,7 +23,6 @@ Whether you're refining a UI or creating a new brand identity, Colorly helps you
 - **Vite 6**
 - **Redux Toolkit**
 - **SASS (SCSS Modules)**
-- **@uiw/react-color**, **tinycolor2**, **css-filter-converter**
 - **React Router 7**
 
 ---
