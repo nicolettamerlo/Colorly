@@ -1,0 +1,57 @@
+.formatConverterPage {
+    &-container {
+        @include flex-col(3rem);
+    }
+    &-converter {
+        @include flex-row(1.9rem);
+        justify-content: center;
+    }
+    &-results {
+        @include flex-col(1.5rem);
+        width: 100%;
+        &-current {
+            @include flex-row(1.5rem);
+            align-items: center;
+            color: $gray-extra-dark;
+        }
+        &-list {
+            @include max-width(31.5rem);
+            width: 100%;
+            @include flex-col(1.5rem);
+            @media screen and (min-width:$tablet){
+                @include gridLayout(2, 3rem, 3rem);
+                @include max-width(65rem);
+            }
+            .codeSnippet {
+                width: 100%;
+                pre {
+                    font-size: 1.5rem!important;
+                    @media screen and (min-width:350px) {
+                        font-size: 1.7rem!important;
+                    }
+                }
+            }   
+            .conversion-name {
+                font-family: monospace;
+                font-size: 1.5rem;
+                padding: .8rem .8rem;
+                border-radius: .3rem;
+                @media screen and (min-width:350px) {
+                    font-size: 1.7rem;
+                }
+            }         
+        }
+
+    }        
+}
+
+#light .formatConverterPage .formatConverterPage-results-list .conversion-name {
+    background-color: $codeLight;
+}
+
+#dark .formatConverterPage .formatConverterPage-results-current {
+    color: $gray-medium;
+}
+#dark .formatConverterPage .formatConverterPage-results-list .conversion-name {
+    background-color: $codeDark;
+}

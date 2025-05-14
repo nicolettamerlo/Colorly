@@ -1,0 +1,66 @@
+$primary-color: #3466e4;
+$primary-color-dark: #254595;
+$secondary-color: #F433BB;
+$secondary-color-dark: #e0059e;
+$secondary-color-light: #e698ce;
+$light: #e6e6ee;
+$dark: #0D0D0D;
+$gray:#d1d7e5;
+$gray-blue:rgb(158, 176, 219);
+$gray-medium:#b5bbce;
+$gray-dark:#9699a1;
+$gray-silver:#484856;
+$gray-extra-dark:#5b5b5b;
+$dark-2:#212121;
+
+$blue-light: #39a9f9;
+$red-light: #f66433;
+$blue: #001aff;
+$red: #ff0000;
+$green: #049d20;
+$green-light: #8ec0a4;
+
+
+// code colors
+$codeYellow:rgb(255, 215, 0);
+$codeOrange:#F5AB35;
+$codeBlue:#000080;
+$codeLightBlue:#0086B3;
+$codeGreen:#40A070;
+$codeLight:#F8F8FF;
+$codeWhite:#F8F8F2;
+$codeDark:#2B2B2B;
+
+
+$spectrumGradient:linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,252,0,1) 14%, rgba(0,255,63,1) 32%, rgba(0,255,243,1) 46%, rgba(0,5,255,1) 60%, rgba(192,0,255,1) 75%, rgba(255,0,202,1) 88%, rgba(255,0,0,1) 96%);
+$spectrumGradientDarker:linear-gradient(90deg, rgb(214, 2, 2) 0%, rgb(212, 208, 2) 14%, rgb(2, 205, 53) 32%, rgb(0, 203, 193) 46%, rgb(1, 5, 200) 60%, rgb(154, 2, 204) 75%, rgb(195, 1, 156) 88%, rgb(214, 2, 2) 96%);
+
+$filter-secondary:brightness(0) saturate(100%) invert(44%) sepia(88%) saturate(4441%) hue-rotate(295deg) brightness(95%) contrast(101%) opacity(100%);
+$filter-secondary-dark:brightness(0) saturate(100%) invert(20%) sepia(31%) saturate(7388%) hue-rotate(301deg) brightness(102%) contrast(120%) opacity(100%);
+$filter-primary-dark: brightness(0) saturate(100%) invert(27%) sepia(92%) saturate(6761%) hue-rotate(307deg) brightness(89%) contrast(108%) opacity(100%);
+$filter-primary:brightness(0) saturate(100%) invert(33%) sepia(35%) saturate(2494%) hue-rotate(202deg) brightness(100%) contrast(99%) opacity(100%);
+$filter-primary-dark: brightness(0) saturate(100%) invert(21%) sepia(89%) saturate(1021%) hue-rotate(200deg) brightness(97%) contrast(98%) opacity(100%);
+$filter-light:brightness(0) saturate(100%) invert(97%) sepia(4%) saturate(966%) hue-rotate(191deg) brightness(92%) contrast(103%);
+$filter-gray :brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(724%) hue-rotate(190deg) brightness(95%) contrast(89%) opacity(100%);
+$filter-gray-blue:brightness(0) saturate(100%) invert(69%) sepia(32%) saturate(299%) hue-rotate(184deg) brightness(95%) contrast(95%) opacity(100%);
+$filter-gray-medium:brightness(0) saturate(100%) invert(75%) sepia(5%) saturate(659%) hue-rotate(188deg) brightness(98%) contrast(97%);
+$filter-gray-dark:invert(64%) sepia(6%) saturate(307%) hue-rotate(186deg) brightness(94%) contrast(92%);
+$filter-gray-extra-dark:brightness(0) saturate(100%) invert(35%) sepia(0%) saturate(132%) hue-rotate(47deg) brightness(99%) contrast(94%) opacity(100%);
+$filter-dark:brightness(0) saturate(100%) invert(37%) sepia(0%) saturate(595%) hue-rotate(129deg) brightness(70%) contrast(100%);
+$filter-green:brightness(0) saturate(100%) invert(71%) sepia(92%) saturate(797%) hue-rotate(97deg) brightness(99%) contrast(90%) opacity(100%);
+
+$navHeight: 5rem;
+
+// BREAKPOINTS
+$mobileM: 425px;
+$mobileL: 500px;
+$mobileXL: 650px;
+$tablet:768px;
+$tabletM:900px;
+$laptop: 1024px;
+$laptopMedium: 1200px;
+$laptopLarge: 1400px;
+$extraLarge: 2500px;
+
+$font-aperture: 'apertureregular', Arial, sans-serif;
+$font-primary: 'Montserrat', sans-serif;

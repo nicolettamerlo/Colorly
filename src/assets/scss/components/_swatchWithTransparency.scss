@@ -1,0 +1,47 @@
+.swatch-with-transparency {
+    border-radius: .3rem;
+   
+    &-inner {
+        border-radius: .3rem;
+        border: 1px solid $light;
+        &--disabled {
+            border-color: $red;
+        }
+    }
+    // dimensions
+    &--small {
+        width: 3.6rem;
+        height: 1.9rem;
+    }
+    &--extra-small {
+        width: 1.8rem;
+        height: 1.7rem
+    }
+    // mediumm is paired with cat in svg  filter page
+    &--medium {
+        width: 5rem;
+        height: 5rem;
+    }
+    &--cat {
+        mask-image: url(../images/icons/cat.svg);
+        width: 7rem;
+        height: 6rem;
+        mask-size: 7rem;
+        mask-repeat: no-repeat;
+        mask-position: center;
+
+    }
+    &--picker {
+        width: 4.5rem;
+        height: 2.4rem;
+    }
+    // color scheme generator page
+    &--modes {
+        width: 6.9rem;
+        height: 5.5rem;
+    }
+
+    &--invalid {
+        border-color: red!important;
+    }
+}

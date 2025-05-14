@@ -1,0 +1,177 @@
+.overlay {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border: 1px solid $primary-color;
+}
+.scheme-code {
+    position: relative;
+    z-index: 15;
+    margin-top: -5.2rem;
+    border: 1px solid $primary-color;
+    border-bottom: 0;
+    transition: .6s all ease-in-out;
+    animation: fadeIn .6s;
+    &-header {
+        color: white;
+        background-color: $primary-color;
+        text-align: center;
+        position: fixed;
+        z-index: 15;
+        width: 100%;
+        height: 5.5rem;
+        &-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.5;
+            padding-top: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        &-btn--close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            @media screen and (min-width:$laptop){
+                right: 3.5rem;
+            }
+        }
+    }
+    &-body {
+        @include max-width(95%);
+        padding-top: 9.5rem;
+        border-radius: .3rem;
+        transition: 1s all ease-in-out;
+        text-align: center;
+        @media screen and (min-width:$tablet){
+            margin-top: 2rem;
+        }
+        @media screen and (min-width:$laptop){
+            margin-top: 4rem;
+        }
+        &-btns {
+            @include flex-row(2rem);
+            margin-top: 1.9rem;
+            &-item {
+                @include flex-row(.9rem);
+                min-width: 8rem;
+                .btn-icon img {
+                    height: 2.2rem;            
+                }
+                &-label {
+                    margin-top: .2rem;
+                    text-transform: uppercase;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        .color-scheme {
+            @include max-width(35rem);
+        }
+        .color-scheme-type {
+            @include max-width(35rem);
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: .6rem;
+            letter-spacing: 2px;
+        }
+        .scheme-code-snippet, 
+        .codeSnippet {
+            @media screen and (min-width:$mobileL){
+                @include max-width(45rem);
+                // margin: 3rem 1.5rem 0 1.5rem;
+            }
+            @media screen and (min-width:350px){font-size: 1.4rem;}
+            @media screen and (min-width:370px){font-size: 1.5rem;}
+            @media screen and (min-width:400px){font-size: 1.6rem;}
+        }
+        .scheme-code-snippet {
+            position: relative;
+            margin: 3rem 1.5rem 0 1.5rem;
+            @media screen and (min-width:$mobileL){
+                @include max-width(45rem);
+                margin: 3rem auto 0 auto;
+            }
+        }
+        .scheme-code-snippet .scheme-code-snippet-language {
+            position: absolute;
+            top: 1rem;
+            z-index: 10;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .codeSnippet {
+            border: 1px solid;
+            border-radius: .3rem;
+            padding: 5rem 0 0 0;
+            font-size: 1.3rem;
+            span {
+                margin-bottom: .8rem;
+                @media screen and (min-width:400px){
+                    margin-bottom: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+#light .overlay {
+    background-color: white;
+}
+#light .scheme-code {
+    .codeSnippet {
+        border-color: $light;
+    }
+    .color-scheme-type {
+        color: $gray-silver;
+    }
+    .scheme-code-body-btns .scheme-code-body-btns-item {
+        .btn-icon {
+            img {
+                filter: $filter-gray-extra-dark
+            }               
+            &:hover img {
+                filter: $filter-primary;
+            } 
+            &:active img {
+                filter: $filter-secondary;
+            }
+        }
+        &-label {
+            color: $gray-dark;
+        }
+    }
+}
+#dark .overlay {
+    background-color: $dark;
+}
+#dark .scheme-code {
+    .codeSnippet {
+        border-color: $gray-extra-dark;
+    }
+    .scheme-code-snippet .scheme-code-snippet-language,
+    .color-scheme-type {
+        color: $gray-medium;
+    }
+    .scheme-code-body-btns .scheme-code-body-btns-item {
+        .btn-icon {
+            img {
+                filter: $filter-gray-medium;
+            }               
+            &:hover img {
+                filter: $filter-primary;
+            } 
+            &:active img {
+                filter: $filter-secondary;
+            }
+        }
+        &-label {
+            color: $gray-medium;
+        }
+    }
+}

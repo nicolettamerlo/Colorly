@@ -1,0 +1,195 @@
+.svgFilterPage {
+    text-align: center;
+
+    &-converter-container {
+        @include flex-col(2rem);
+    }
+    &-converter {
+        margin-top: 2rem;
+        @include flex-row(2rem);
+        align-items: center;
+        .btn-converter {
+            &-label {
+                margin-top: .3rem;
+            }
+        }
+    }
+    &-result {
+        @include flex-col(1.5rem);
+        &-messages {
+            &-paragraph {
+                font-size: 1.6rem;
+                &:first-child {
+                    margin-bottom: .4rem;
+                }
+            }
+            .loss-value {
+                font-weight: 500;
+            }
+            .match-value {
+                font-weight: 500;
+             &--perfect, &--great {
+                    color: rgb(16, 176, 104);
+                }
+                &--good {
+                    color: rgb(2, 41, 131);
+                }
+                &--bad {
+                    color: rgb(164, 19, 19);
+                }                
+            }
+        }
+        &-filter {
+            @include max-width(74rem);
+            position: relative;
+            font-weight: 500;
+            padding: 4.5rem 2rem 3rem 2rem;
+            border: 1px solid $gray;
+            border-radius: .2rem;
+            letter-spacing: 1px;
+            @media screen and (min-width:$mobileM){
+                padding: 4.5rem 5rem 3rem 5rem;
+            }
+            &-indicator {
+                @include flex-row(.5rem);
+                align-items: center;
+                position: absolute;
+                top: 1.1rem;
+                left: 1rem;
+                .swatch-with-transparency--extra-small {
+                    border-color: $gray-dark;
+                }
+                &-label {
+                    color: $gray-dark;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+.svgFilterPage .svgFilterPage--explanation {
+    .page-title {
+        font-weight: 600;
+    }
+    p {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        line-height: 1.3;
+        margin: 2rem 0;
+    }
+    .color-box {
+        display: inline-block;
+        padding: .1rem .5rem;
+        border-radius: .3rem;
+        &--skyblue {
+            background-color: #00BFFF;
+        }
+        &--lime {
+            background-color: lime;
+            color: $dark;
+        }
+        &--magenta {
+            background-color: magenta;
+            color: $dark;
+        }
+        &--yellow {
+            background-color: yellow;
+            color: $dark;
+        }
+        &--light {
+            background-color: $light;
+            letter-spacing: .4;
+            color: black;   
+        }
+    }
+    .codeSnippet {
+        margin: 1.5rem auto;
+    }
+    .content {
+        @include max-width(75rem);
+        text-align: left;
+        margin-top: 4rem;
+    }
+    .svg-image {
+        width: 5rem;
+        &--skyblue {
+            filter:brightness(0) saturate(100%) invert(76%) sepia(67%) saturate(5496%) hue-rotate(161deg) brightness(104%) contrast(101%) opacity(100%);
+        }
+    }
+    .fill-result {
+        @include flex-row(1rem);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        .arrow {
+            font-size: 4rem;
+        }
+    }
+    .image-filter-demo {
+        cursor: pointer;
+        height: 9rem;
+        &-cyan {
+            filter: brightness(0) saturate(100%) invert(90%) sepia(53%) saturate(4730%) hue-rotate(102deg) brightness(107%) contrast(101%);
+        }
+        //#FF00FF
+        filter:brightness(0) saturate(100%) invert(28%) sepia(70%) saturate(6991%) hue-rotate(293deg) brightness(111%) contrast(130%) opacity(100%);
+        //#FFFF00
+        &:hover {
+            filter:brightness(0) saturate(100%) invert(95%) sepia(32%) saturate(6913%) hue-rotate(359deg) brightness(110%) contrast(101%) opacity(100%);
+            transform: translate(-1px, -1px);
+        }
+        //#00FF00
+        &:active {
+            filter:brightness(0) saturate(100%) invert(73%) sepia(67%) saturate(5643%) hue-rotate(84deg) brightness(120%) contrast(121%) opacity(100%);  
+        }
+    }
+    .bullet-list {
+        font-family: $font-primary;
+        font-size: 1.4rem;
+        list-style-type: disc;
+        &-item {
+            padding-top: .8rem;
+        }
+    }
+}
+
+// ligh and dark mode setting
+#light .svgFilterPage .svgFilterPage-result-filter {
+    font-weight: 500;
+    background-color: $codeLight;
+    span {
+        color: $codeDark;
+    }
+    .property {
+        color: $codeBlue;
+    }
+    .filterName {
+        color: $codeLightBlue;
+    }
+    .filterValue {
+        color: $codeGreen;
+    }
+    .colon, .semicolon, .bracket {
+        color: $codeDark;
+    }
+
+}
+
+#dark .svgFilterPage-result .svgFilterPage-result-filter {
+    background-color: $codeDark;
+    color: $codeOrange;
+    .property {
+        color: $codeYellow;
+    }
+    .colon, .semicolon, .bracket {
+        color: $codeWhite;
+    }
+}
+
+#light .svgFilterPage .svg-image--default {
+    filter: $filter-dark;
+}
+#dark .svgFilterPage .svg-image--default {
+    filter: $filter-light;
+}

@@ -1,0 +1,14 @@
+.homepage {
+    min-height: 100vh;
+    .navbar {
+        display: none;
+    }
+    background-color: $primary-color;
+    background-color: pink;
+
+    // position masterHeader and footer
+    @include flex-col(0);
+    .master-header {
+        flex-grow: 1;
+    }
+} 

@@ -1,0 +1,125 @@
+.color-picker-chrome {
+    position: absolute;
+    top: -3rem;
+    width: 28rem;
+    z-index: 40;
+    @include flex-col(0);
+    align-items: center;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    &-header {
+        position: relative;
+        @include flex-row(2rem);
+        width: 100%;
+        border-bottom: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border: 1px solid #CCCCCC;
+        border-bottom: 0;
+        &-btns {
+            @include flex-row(2rem);
+            position: absolute;
+            top: .9rem;
+            right: 1rem;
+            &-icon {
+                cursor: pointer;
+                transition: .3s; 
+                &:hover {
+                    transform: translate(-1px, -1px);
+                    filter: $filter-primary;
+                }
+                &:active {
+                    filter: $filter-secondary;
+                }
+            }
+            .saveColorBtn {
+                height: 2.5rem;
+                filter:$filter-green;
+                &:hover {
+                    filter: $filter-primary;
+                }
+                &:active {
+                    filter: $filter-secondary;
+                }
+            }
+            .dismissColorBtn {
+                height: 2.2rem;
+            }
+            &-icon:hover {
+                filter: $filter-primary;
+            }
+            &-icon:active {
+                filter: $filter-secondary;
+            }
+        }
+    }
+}
+// remove color picker indicator
+.color-picker-chrome>div>div:nth-child(4) {
+    &>div:nth-child(1) {
+        display: none;
+    }
+}
+.w-color-chrome {
+    border-top: 0!important;
+    width: 28rem!important;
+}
+.color-picker-chrome .w-color-saturation-fill {
+    width: 1.2rem!important;
+    height: 1.2rem!important;
+}
+.color-picker-chrome .w-color-alpha-fill {
+    border: 3px solid rgb(255, 255, 255)!important;
+    background-color: transparent!important;
+}
+#light .w-color-chrome, 
+#light .color-picker-chrome-header {
+    background-color: #F8F8FF!important;
+}
+#light .color-picker-chrome {
+    svg {
+        &:hover {
+            filter: $filter-primary;  
+        }
+        &:active {
+            filter: $filter-secondary;  
+        }
+    }
+}
+#dark .w-color-chrome, 
+#dark .color-picker-chrome-header {
+    background-color: lighten($dark, 9)!important;
+    border-color:$light!important;
+}
+#dark .color-picker-chrome {
+    svg {
+        // background-color: lighten($dark, 15)!important;
+        color: red!important;
+        // background-color: $gray;
+        filter: $filter-gray;
+        &:hover {
+            // background-color: transparent!important;
+            filter: $filter-primary;  
+        }
+        &:active {
+            // background-color: transparent!important;
+            filter: $filter-secondary;  
+        }
+    }
+    .dismissColorBtn {
+        height: 2.2rem;
+        filter:$filter-gray-medium;
+        &:hover {
+            filter:$filter-primary;
+        }
+        &:active {
+            filter:$filter-secondary;
+        }
+    }
+    input {
+        color: $gray-medium!important;
+        &:focus {
+            color: white!important;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.footer {
+    position: relative;
+    color: $gray;
+    font-weight: 500;
+    z-index: 18;
+    font-size: 1.4rem;
+    &-container {
+        background-color: $gray-silver;
+        &-inside {
+            @include max-width(80rem);
+            padding: 2rem 1rem;
+            text-align: center;
+            @include gridLayout(1, 3rem, 3rem);
+            @media screen and (min-width:$tablet){
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+            }
+        }
+    }
+    .contacts-icons {
+        @include flex-row(4rem);
+        align-items: center;
+        @media screen and (min-width:$laptop){
+            column-gap: 2.5rem;
+        }
+        .svg-link {
+            &-image {
+                height: 2.3rem;
+                filter: $filter-gray;
+                @media screen and (min-width:$tablet){
+                      height: 1.9rem;
+                }
+                &:hover {
+                    filter: $filter-primary;
+                    transform: translate(-.1rem, -.1rem);
+                }
+                &:active {
+                    filter: $filter-secondary;
+                }
+            }
+        }
+    }
+    
+}
+.footer-page {
+    background-color: $gray-silver;
+}

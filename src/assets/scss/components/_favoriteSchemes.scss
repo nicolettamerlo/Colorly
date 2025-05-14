@@ -1,0 +1,126 @@
+.favorite-schemes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    border: 1px solid $primary-color;
+    border-bottom: 0;
+    transition: .6s all ease-in-out;
+    animation: fadeIn .6s;
+    &-header {
+        color: white;
+        background-color: $primary-color;
+        text-align: center;
+        position: fixed;
+        z-index: 15;
+        width: 100%;
+        &-title {
+            @include max-width(25rem);
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.5;
+            padding: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            @media screen and (min-width:$mobileL){
+               max-width: unset;
+               padding: 1.5rem;
+            }
+        }
+        &-btn--close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            @media screen and (min-width:$laptop){
+                right: 3.5rem;
+            }
+        }
+    }
+    &-body {
+        @include max-width(95%);
+        margin-top: 8rem;
+        border-radius: .3rem;
+        height: 80vh;
+        overflow-y:auto;
+        &-list {
+            @include max-width(150rem);
+            padding: 3rem 4rem;
+            border-radius: .3rem;
+            display: grid;
+            column-gap: 3rem;
+            row-gap: 3.5rem;
+            transition: 1s all ease-in-out;
+            @media screen and (min-width:$mobileL){
+              grid-template-columns: repeat(2, 1fr);  
+            }
+            @media screen and (min-width:$tablet){
+              grid-template-columns: repeat(3, 1fr);  
+            }
+            @media screen and (min-width:$laptop){
+              grid-template-columns: repeat(4, 1fr);  
+            }
+            @media screen and (min-width:$laptopMedium){
+              grid-template-columns: repeat(5, 1fr);  
+            }
+        }
+        &-message {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            padding: 3rem 4rem;
+            border-radius: .3rem;
+        }
+        .color-scheme {
+            &-footer {
+                justify-content: center;
+                &-type {
+                    display: none;
+                }
+            }
+            .swatch-color, .swatch {
+                height: 6rem;
+                @media screen and (min-width:$laptop) {
+                    height: 7rem;
+                }
+            }
+        }
+    }
+    &-footer {
+        position: fixed;
+        height: 5.5rem;
+        background-color: $primary-color;
+        bottom: 1px;
+        left: 0;
+        right: 0;
+        width: 100%; 
+        border: 1px solid $primary-color;
+        text-align: center;
+        & > .btn-icon-bg {
+            margin: .8rem 2rem;
+        }
+    }
+}
+#light .favorite-schemes,
+#light .favorite-schemes-body, 
+#light .favorite-schemes-body-list,
+#dark .favorite-schemes-body-message  {
+    background-color: white;
+}
+#dark .favorite-schemes,
+#dark .favorite-schemes-body, 
+#dark .favorite-schemes-body-list,
+#dark .favorite-schemes-body-message  {
+    background-color: $dark;
+}
+#dark .favorite-schemes-body-message {
+    color: $gray-medium;
+}
+
+.favorite-schemes .modal-info {
+    position: absolute;
+    bottom: -12rem;
+    left: 0;
+    right: 0;
+}

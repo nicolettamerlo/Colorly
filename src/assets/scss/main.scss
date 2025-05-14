@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+@import './presets';
+@import './variables';
+@import './mixins';
+@import './typography';
+@import './layout';
+@import './navigation';
+@import './header';
+@import './masterHeader';
+@import './footer';
+@import './buttons';
+
+// PAGES
+@import './pages/homepage';
+@import './pages/svgFilterPage';
+@import './pages/formatConverterPage';
+@import './pages/pageNotFound';
+@import './pages/schemesGeneratorPage';
+
+// COMPONENTS
+@import './components/codeSnippet';
+@import './components/copyToClipboard';
+@import './components/colorModes';
+@import './components/colorScheme';
+@import './components/modal';
+@import './components/favoriteSchemes';
+@import './components/loader';
+@import './components/colorPicker';
+@import './components/swatchWithTransparency';
+@import './components/schemeCode';
+
+html {
+    font-size: 62.5%;
+}
+body {
+    color: $dark;
+    font-size: 1.6rem;
+    font-family: $font-primary;
+    background-color: $light;
+}

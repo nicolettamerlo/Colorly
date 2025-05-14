@@ -1,0 +1,41 @@
+.pageNotFound {
+    min-height: calc(100vh - $navHeight);
+
+    .header-page {
+        padding: 0 1rem;
+        &-title {
+            font-size: 3rem;
+            @media screen and (min-width:$tablet){
+                font-size: 4rem;
+            }
+        }
+        &-description {
+            margin-top: 3rem;
+            font-size: 1.9rem;
+            font-weight: 500;
+            @media screen and (min-width:$tablet){
+                font-size: 2.3rem;
+            }
+        }
+    }
+
+    &-container {
+        @include flex-col(4rem);
+        justify-content: center;
+        .secondary-btn {
+            display: block;
+            margin: 0 auto;
+        }  
+    }
+    &-options {
+        @include max-width(40rem);
+        &-title {
+            font-size: 2.2rem;
+            margin-bottom: 7rem;
+            font-weight: 500;
+            @media screen and (min-width:$laptop){
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

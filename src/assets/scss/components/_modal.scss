@@ -1,0 +1,135 @@
+.modal {
+    position: relative;
+    z-index: 30;
+    border: 1px solid $primary-color;
+    border-radius: .3rem;
+    box-shadow: 1px 1px .6rem rgba($dark, .8);
+    overflow: hidden;
+    &-header {
+        position: relative;
+        text-transform: uppercase;
+        padding: 1.2rem .5rem 1.2rem .5rem;
+        text-align: center;
+        color: $light;
+        font-size: 1.5rem;
+        font-weight: 600;  
+        letter-spacing: 2px;
+        background-color: $primary-color;
+        text-transform: uppercase;
+        border-bottom: 1px solid $primary-color;
+        &-btn {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+        }     
+    }
+    &-body {
+        background-color: white;
+    }
+    &-footer {
+        background-color: white;
+        text-align: center;
+    }
+}
+// favorite schemes modal - delete all scheme confirm
+.modal-delete-all-confirm {
+    position: fixed;
+    @include max-width(30rem);
+    border: 1px solid $red;
+    border-radius: .3rem;
+    padding: 0;
+    bottom: 6rem;
+    left: 0;
+    right: 0;
+    z-index: 10; 
+    background-color: white;
+    transition: .3s all ease-in-out;
+    animation: fadeIn .6s;
+    @media screen and (min-width:$mobileL){
+        @include max-width(40rem);
+    }
+    .modal-header {
+        background-color: $red;
+        border-bottom: 0;
+        &-btn {
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+    .modal-body {
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 500;
+        padding: 1.5rem 4rem;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        span {
+            color: $red;
+        }
+    }
+    .modal-footer {
+        background-color: $light;
+        padding: 1rem 0 1rem 0;
+        .modal-footer-options>button {
+            margin: 0 2rem;
+        }
+    }
+}
+#light .modal-delete-all-confirm .modal-body,
+#light .modal-delete-all-confirm .modal-footer  {
+    color: $gray-extra-dark;
+    background-color: white;
+}   
+#dark .modal-delete-all-confirm .modal-body,
+#dark .modal-delete-all-confirm .modal-footer  {
+        background-color: $dark-2;
+        color: $gray;
+}   
+
+.modal-type {
+    position: absolute;
+    width: 28rem;
+    top: -19rem;
+    @media screen and (min-width:$mobileXL){
+        width: 29rem; 
+        top: unset;
+        bottom: -5rem;
+    }
+    @media screen and (min-width:$laptop){
+        bottom: 0;
+    }
+    &-body {
+        padding: 2rem;
+    }
+    &-body-options {
+        @include flex-col(1.4rem);
+        .input-group {
+            @include flex-row(.5rem);
+            align-items: center;
+            justify-content: left;
+            input[type="radio"] {
+                cursor: pointer;
+                margin-bottom: .4rem;
+                -ms-transform: scale(1.2); /* IE 9 */
+                -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
+                transform: scale(1.2);
+            }
+            label {
+                font-size: 1.3rem;
+                text-transform: uppercase;
+            }
+            &:hover {
+                border-radius: .2rem;
+            }
+        }
+    }
+}
+#light .modal-type-body {
+    background-color:#FAFAFA;
+    color: $dark;
+}
+#dark .modal-type-body {
+    background-color: $dark-2;
+    color: $gray;
+}

@@ -1,0 +1,82 @@
+.master-header {
+  background-color: $primary-color;
+  padding: 4rem 3rem;
+     @media (min-width: $tablet) {
+      @include gridLayout(1, 0, 0);
+     }
+  &-content {
+     @include flex-col(5rem);
+     @media (min-width: $tablet) {
+      @include gridLayout(2, 2rem, 2rem);
+      @include max-width(1200px);
+      align-items: center;
+     }
+  }
+  &-left {
+    flex: 1;
+    @include flex-col(1.5rem);
+  }
+  &-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.master-header-title-container{
+  background-color: white;
+  padding: .2rem .9rem .4rem .9rem;
+  border-radius: .3rem;
+  @include flex-col(0rem);
+  width: fit-content;
+  align-items: center;
+
+  .master-header-logo {
+    height: 8.5rem;
+  }
+  .master-header-title {
+    width: fit-content;
+    color: $secondary-color;
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+}
+.master-header-payoff {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: $gray-extra-dark;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  background-color: #FFFF00;
+  width: fit-content;
+  padding: .2rem .6rem;
+    border-radius: .3rem;
+}
+.master-header-description {
+  font-size: 1.6rem;
+  color: $light;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  max-width: 500px;
+}
+.master-header-image-container {
+  border-radius: 1rem;
+  padding: 1.3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  max-width: 40rem;
+  height: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.master-header-image {
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,44 @@
+@mixin max-width($width){
+    max-width: $width;
+    margin: 0 auto;
+}
+@mixin flex-col($gap){
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+@mixin flex-row($gap){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: $gap;
+}
+@mixin gridLayout($numCol, $colGap, $rowGap){
+    display: grid;
+    grid-template-columns: repeat($numCol, 1fr);
+    justify-content: center;
+    row-gap: $rowGap;
+    column-gap: $colGap;
+}
+
+@mixin absolute-pos-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin globalTansition {
+    transition: .4s all ease-in;
+}
+
+@keyframes fadein {
+100% {
+    opacity: 1;
+    }
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}

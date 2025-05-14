@@ -1,0 +1,63 @@
+.heading-title {
+    @include flex-row(.8rem);
+    @include max-width(120rem);
+    margin-bottom: 10rem;
+    width: 100%;
+    color: $gray;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $primary-color;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    @media screen and (min-width:$mobileM) {
+        font-size: 2.5rem;
+    }
+    @media screen and (min-width:$tablet) {
+        font-size: 3.5rem;
+    }
+    @media screen and (min-width:$laptop) {
+        font-size: 4rem;
+    }
+}
+
+.page {
+    &-container {
+        padding: 6rem 2rem 4rem 2rem;
+    }
+}
+// light theme
+#light .page {
+    @include globalTansition;
+    background-color: white;
+    color: $dark;
+    
+}
+// dark theme
+#dark .page {
+    @include globalTansition;
+    background-color: $dark;
+    color: $light;
+}
+.d-hidden {
+    visibility: hidden;
+}
+.d-none {
+    display: none;
+}
+.no-scroll {
+    overflow: hidden;
+}
+.image {
+    border-radius: .3rem;
+    width: 100%;
+    height: auto;
+}
+.divider {
+    height: 1px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: $gray;
+}
+#dark .divider {
+    background-color: $gray-silver;
+ }

@@ -1,0 +1,41 @@
+// pages header
+.header-page--container {
+    padding: 4rem 1rem 3rem 1rem;
+    margin-bottom: 3rem;
+}
+.header-page {
+    position: relative;
+    font-family: $font-primary;
+    padding: 0 2rem;
+
+    &-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    &-description {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+}
+#light .header-page--container {
+    @include globalTansition;
+    background-color: darken(white, 6);
+    box-shadow: 1px 1px 1px $gray;
+    .header-page-description {
+        color: $gray-extra-dark;
+    }
+}
+#dark .header-page--container {
+    @include globalTansition;
+    background-color: lighten($dark, 15);
+    box-shadow: 1px 1px 1px $gray-extra-dark;
+    .header-page-title {
+        color: $gray;
+    }
+    .header-page-description {
+        color: $gray-medium;
+    }
+}

@@ -1,0 +1,152 @@
+.color-modes {
+    @include max-width(35rem);
+    @include flex-row(2rem);
+    position: relative;
+    width: 100%;
+    &-picker-btn {
+        width: 5rem;
+        position: relative;
+        display: block;
+        &-spectrum {
+            @include absolute-pos-center;
+            width: 3.2rem;
+            height: 2.3rem;
+            background: $spectrumGradient;
+            border-radius: .2rem;
+        }
+        &:hover  {
+            & > div {
+                background: $spectrumGradientDarker;
+            }
+        }
+    }
+    &-container {
+        width: 100%;
+        position: relative;
+    }
+    &-input {
+        height: 100%;
+        width: 100%;
+        padding: 0 .6rem;
+        font-family: $font-primary;
+        text-align: center;
+        background-color: darken(white, 2);
+        border: 1px solid $gray;
+        border-radius: .3rem;
+        height: 3.3rem;
+        letter-spacing: 1px;
+        @media screen and (min-width:$mobileM){
+            font-size: 1.6rem;
+        }
+        &--invalid {
+            color: $red;
+            border-color: $red;
+        }
+        &:focus {
+            outline: unset;
+            border: 2px solid $primary-color;
+            color: black;
+            font-weight: 500;
+        }
+    }
+    &-format {
+        @include flex-row(1.2rem);
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        top: -2.6rem;
+        transform: translateX(-50%);
+        &-label {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.color-modes--generator-page-layout {
+   
+    @include max-width(20rem);
+    @include flex-col(2rem);
+    align-items: center;
+    .color-modes-picker-btn-spectrum {
+        display: none;
+    }
+    .color-modes-picker-btn {
+        width: 7rem;
+        height: 5.4rem;
+        position: relative;
+        display: block;
+        &-spectrum { display: none;}
+        &:hover  {
+            box-shadow: none;
+            & > div {
+                background: $spectrumGradientDarker;
+            }
+        }
+    }
+    .swatch-with-transparency--modes {
+        @include absolute-pos-center;
+        border: 1px solid $gray-medium;
+        box-shadow: 1px 1px 1px $gray-medium;
+        &:hover {
+            border-color: transparent;
+            box-shadow: none;
+        }
+    }
+    .color-picker-input {
+        height: 100%;
+        width: 100%;
+        padding: 0 .6rem;
+        font-family: $font-primary;
+        text-align: center;
+        background-color: darken(white, 2);
+        border: 1px solid $gray;
+        border-radius: .3rem;
+        height: 3.3rem;
+        letter-spacing: 1px;
+        @media screen and (min-width:$mobileM){
+            font-size: 1.6rem;
+        }
+        &--invalid {
+            color: $red;
+            border-color: $red;
+        }
+        &:focus {
+            outline: unset;
+            border: 2px solid $primary-color;
+            background-color: white;
+            color: black;
+            font-weight: 500;
+        }
+    }
+    .color-modes-format {
+        position: absolute;
+        top: 3.9rem;
+    }
+}
+
+// theme mode
+#light .color-modes-input {
+    background-color: darken(white, 2);
+    &:focus {
+        background-color: white;
+    }
+}
+
+#light .color-modes-format-label {
+    color: $gray-silver;
+}
+
+#dark .color-modes-input {
+    background-color: $gray;
+    color: $dark;
+    font-weight: 500;
+    &:focus {
+        background-color: white;
+    }
+}
+#dark .color-modes-format-label {
+    color: $gray;
+}
