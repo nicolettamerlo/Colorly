@@ -6,7 +6,6 @@ import PageNotFound from "./pages/PageNotFound";
 import SVGFilterPage from "./pages/SVGFilterPage";
 import SchemesGeneratorPage from "./pages/SchemesGeneratorPage";
 import FormatConverterPage from "./pages/FormatConverterPage";
-import './assets/css/APERTURE/stylesheet.css';
 import './assets/scss/main.scss';
 
 function App() {
